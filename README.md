@@ -53,9 +53,9 @@ For example,
 
 ```elixir
 > p = Rationalize.closest_rational(0.123, 10)
-> "A catastrophic meltdown is expected to occur in rouhgly #{p.n} out of every #{p.d} reactors."
+> "A catastrophic meltdown is expected to occur in roughly #{p.n} out of every #{p.d} reactors."
 
-"A catastrophic meltdown is expected to occur in rouhgly 1 out of every 8 reactors."
+"A catastrophic meltdown is expected to occur in roughly 1 out of every 8 reactors."
 ```
 
 
