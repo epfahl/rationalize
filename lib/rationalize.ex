@@ -4,7 +4,7 @@ defmodule Rationalize do
   denominator of 20:
 
   ```elixir
-  > Rationalize.closest_rational(3.1416, 20)
+  > Rationalize.closest_rational(3.1416, 10)
 
   %Rationalize.Rational{d: 7, n: 22}
   ```
