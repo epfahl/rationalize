@@ -26,7 +26,7 @@ The accuracy of the approximation is controlled by the maximum
 denominator. Setting the maximum denominator too 1000, we find
 
 ```elixir
-> r = Rationalize.closest_rational(3.1416, 1000)
+> r = Rationalize.closest_rational(3.1416, 100)
 > r
 
 %Rationalize.Rational{d: 99, n: 311}
