@@ -1,7 +1,7 @@
 defmodule Rationalize do
   @moduledoc """
   Run the following to find a rational approximation to 3.1416 with a maximum
-  denominator of 100:
+  denominator of 20:
 
   ```elixir
   > Rationalize.closest_rational(3.1416, 20)
