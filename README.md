@@ -126,8 +126,10 @@ prime numerator and denominator.
 
 # Todo
 
-`Rationalize` grew from a specific use case. But...
+`Rationalize` grew from a specific use case, but it could be generalized to
+be a more complete library for working with rational numbers. Possibilities
+for extending `Rationalize` include
 
-- Adaptively compute the maximum denominator based on the size of the decimal.
-- Add more utilities for working with rational numbers (e.g., add, multiply, 
-  divide, subtract), and bring these into the top-level API.
+- adaptively computing the maximum denominator based on the size of the decimal.
+- adding more utilities for working with rational numbers (e.g., add, multiply, 
+  divide, subtract), and bringing these into the top-level API.
