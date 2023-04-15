@@ -48,7 +48,7 @@ defmodule Rationalize.MixProject do
 
   defp docs() do
     [
-      main: "Tim",
+      main: "Rationalize",
       extras: ["README.md"]
     ]
   end
