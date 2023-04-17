@@ -116,7 +116,7 @@ tree until some termination condition is satisfied.
 Each update of the binary search uses the _mediant_ of two rational numbers. 
 If `R1 = n1/d1` and `R2 = n2/d2` are two rational numbers, and `R1 < R2`,
 the mediant is `M = (n1 + n2) / (d1 + d2)`, which has the property
-`R1 < M < R2`. For a target decimal `d` and `R1 < d < R2`, the mediant
+`R1 <= M <= R2`. For a target decimal `d` and `R1 < d < R2`, the mediant
 is used to recursively narrow the range of the bracketing rationals.
 
 Because of the properties of the Stern-Brocot tree and the mediant-based search, 
