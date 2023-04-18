@@ -53,11 +53,11 @@ defmodule Rationalize.Rational do
 
   ## Examples
 
-    iex> alias Rationalize.Rational, as: R
-    iex> R.to_string(R.new(1, 2))
-    "1/2"
-    iex> R.to_string(R.new(1, 2), fn n, d -> "#{n} over #{d}" end)
-    "1 over 2"
+      iex> Rationalize.Rational.to_string(Rationalize.Rational.new(1, 2))
+      "1/2"
+
+      iex> Rationalize.Rational.to_string(Rationalize.Rational.new(1, 2), fn n, d -> "#{n} over #{d}" end)
+      "1 over 2"
   """
   @spec to_string(R.t(), (integer(), integer() -> binary())) :: binary()
   def to_string(%R{n: n, d: d}, formatter \\ fn n, d -> "#{n}/#{d}" end) do
@@ -108,9 +108,8 @@ defmodule Rationalize.Rational do
 
   ## Examples
 
-    iex> alias Rationalize.Rational, as: R
-    iex> R.mediant(R.new(1, 4), R.new(1, 2))
-    %R{n: 2, d: 6}
+      iex> Rationalize.Rational.mediant(Rationalize.Rational.new(1, 4), Rationalize.Rational.new(1, 2))
+      %Rationalize.Rational{n: 2, d: 6}
   """
   @spec mediant(R.t(), R.t()) :: R.t()
   def mediant(%R{n: n1, d: d1}, %R{n: n2, d: d2}) do
@@ -131,11 +130,11 @@ defmodule Rationalize.Rational do
 
   ## Examples
 
-    iex> alias Rationalize.Rational, as: R
-    iex> R.standardize(R.new(1, 2))
-    %R{n: 1, d: 2}
-    iex> R.standardize(R.new(1, -2))
-    %R{n: -1, d: 2}
+      iex> Rationalize.Rational.standardize(Rationalize.Rational.new(1, 2))
+      %Rationalize.Rational{n: 1, d: 2}
+
+      iex> Rationalize.Rational.standardize(Rationalize.Rational.new(1, -2))
+      %Rationalize.Rational{n: -1, d: 2}
   """
   @spec standardize(R.t()) :: R.t()
   def standardize(%R{n: n, d: d} = r) do
@@ -160,9 +159,8 @@ defmodule Rationalize.Rational do
 
   ## Examples
 
-    iex> alias Rationalize.Rational, as: R
-    iex> R.compare_to_num(R.new(1, 2), 1)
-    :lt
+      iex> Rationalize.Rational.compare_to_num(Rationalize.Rational.new(1, 2), 1)
+      :lt
   """
   @spec compare_to_num(R.t(), number()) :: comparison()
   def compare_to_num(%R{n: 0, d: 0}, _x), do: :undefined
@@ -203,22 +201,25 @@ defmodule Rationalize.Rational do
   denominator of 0 and a negative numerator is less than any rational with a
   nonzero denominator.
 
-  ## Examples
-
-    iex> alias Rationalize.Rational, as: R
-    iex> R.compare(R.new(1, 2), R.new(2, 1))
-    :lt
-    iex> R.compare(R.new(2, 1), R.new(1, 2))
-    :gt
-    iex> R.compare(R.new(1, 1), R.new(1, 1))
-    :eq
-    iex> R.compare(R.new(1, 0), R.new(1, 2))
-    :gt
-    iex> R.compare(R.new(-1, 0), R.new(-1, 2))
-    :lt
-
   # Notes
     - While shortcuts may be possible, the explicit branches are easy to follow.
+
+  ## Examples
+
+      iex> Rationalize.Rational.compare(Rationalize.Rational.new(1, 2), Rationalize.Rational.new(2, 1))
+      :lt
+
+      iex> Rationalize.Rational.compare(Rationalize.Rational.new(2, 1), Rationalize.Rational.new(1, 2))
+      :gt
+
+      iex> Rationalize.Rational.compare(Rationalize.Rational.new(1, 1), Rationalize.Rational.new(1, 1))
+      :eq
+
+      iex> Rationalize.Rational.compare(Rationalize.Rational.new(1, 0), Rationalize.Rational.new(1, 2))
+      :gt
+
+      iex> Rationalize.Rational.compare(Rationalize.Rational.new(-1, 0), Rationalize.Rational.new(-1, 2))
+      :lt
   """
   @spec compare(R.t(), R.t()) :: comparison()
   def compare(%R{n: 0, d: 0}, _r2), do: :undefined
