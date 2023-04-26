@@ -8,7 +8,7 @@ defmodule Rationalize.Rational do
   division is avoided.
   """
 
-  alias Rationalize.Rational, as: R
+  alias __MODULE__, as: R
 
   @type t :: %R{
           n: integer(),
